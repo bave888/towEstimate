@@ -1,0 +1,210 @@
+/* Roadside Estimator Widget Styles */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+}
+
+.estimate-page {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.estimator {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 40px;
+}
+
+.estimator__header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.estimator__brand {
+  color: #003da5;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+}
+
+.estimator__tagline {
+  color: #666;
+  font-size: 14px;
+  margin: 10px 0 0 0;
+}
+
+#estimate-title {
+  color: #003da5;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+.estimate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.estimate-section {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 0;
+}
+
+.estimate-section legend {
+  color: #003da5;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0 10px;
+  margin-left: -10px;
+}
+
+.estimate-section label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 500;
+  color: #333;
+}
+
+.estimate-section label:last-of-type {
+  margin-bottom: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 5px;
+  border: 1px solid #999;
+  border-radius: 0;
+  font-family: inherit;
+  font-size: 14px;
+  background: white;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+select:focus {
+  outline: 2px solid #003da5;
+  outline-offset: -2px;
+  border-color: #003da5;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.estimate-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+.estimate-check input[type="checkbox"] {
+  margin: 0 8px 0 0;
+}
+
+.service-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+#serviceQuotePreview {
+  color: #003da5;
+  font-size: 20px;
+}
+
+.service-area-disclaimer {
+  font-size: 12px;
+  color: #666;
+  margin-top: 15px;
+  line-height: 1.5;
+}
+
+.field-note {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  margin-top: 5px;
+  font-weight: 400;
+}
+
+.form-note {
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.gps-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #003da5;
+  color: white;
+  border: 1px solid #003da5;
+  border-radius: 0;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.gps-button:hover {
+  background: #002675;
+  border-color: #002675;
+}
+
+.gps-button:active {
+  background: #001a4d;
+  border-color: #001a4d;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .estimator {
+    padding: 20px;
+  }
+
+  #estimate-title {
+    font-size: 24px;
+  }
+
+  .estimator__brand {
+    font-size: 11px;
+  }
+}

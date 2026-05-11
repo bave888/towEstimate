@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Roadside Assistance Estimate</title>
+    <link rel="stylesheet" href="./roadside-estimator.css" />
+  </head>
+  <body>
+    <main class="estimate-page">
+      <section class="estimator" aria-labelledby="estimate-title">
+        <div class="estimator__header">
+          <p class="estimator__brand">Rapid Roadside Runner</p>
+          <h1 id="estimate-title">Get Estimate</h1>
+          <p class="estimator__tagline">Towing and roadside service pricing, day or night.</p>
+        </div>
+
+        <form id="estimateForm" class="estimate-form">
+          <fieldset class="estimate-section estimate-section--service">
+            <legend>Service</legend>
+            <label>
+              Service needed
+              <select id="serviceType" name="serviceType" required>
+                <option value="towing" selected>Towing</option>
+                <option value="jumpStart">Jump start</option>
+                <option value="fuelDelivery">Fuel delivery</option>
+                <option value="lockout">Lockout</option>
+                <option value="tireChange">Tire change</option>
+                <option value="winching">Winching service</option>
+              </select>
+            </label>
+
+            <label id="vehicleTypeWrap">
+              Vehicle type
+              <select id="vehicleType" name="vehicleType">
+                <option value="car">Car / sedan</option>
+                <option value="suvTruck">SUV / truck</option>
+              </select>
+            </label>
+
+            <label id="towMilesWrap" class="is-hidden">
+              Tow distance in miles
+              <input id="towMiles" name="towMiles" type="number" min="0" step="1" placeholder="Example: 12" />
+              <span id="distanceStatus" class="field-note" aria-live="polite"></span>
+            </label>
+
+            <label id="winchHoursWrap" class="is-hidden">
+              Estimated winching hours
+              <input id="winchHours" name="winchHours" type="number" min="1" step="0.5" value="1" />
+            </label>
+
+            <label id="afterHoursWrap" class="estimate-check is-hidden">
+              <input id="afterHours" name="afterHours" type="checkbox" />
+              <span>After-hours fee applies after 8 PM</span>
+            </label>
+
+            <div class="service-preview" aria-live="polite">
+              <span>Quoted Price</span>
+              <strong id="serviceQuotePreview">$225</strong>
+            </div>
+
+            <p id="serviceAreaDisclaimer" class="service-area-disclaimer is-hidden">
+              Quote applies within our standard service area. An additional surcharge may apply outside that area.
+            </p>
+          </fieldset>
+
+          <fieldset class="estimate-section estimate-section--location">
+            <legend>Location</legend>
+            <label>
+              Pick up location
+              <input
+                id="pickupLocation"
+                name="pickupLocation"
+                autocomplete="street-address"
+                list="pickupSuggestions"
+                required
+              />
+              <datalist id="pickupSuggestions"></datalist>
+              <span id="pickupSuggestionStatus" class="field-note" aria-live="polite">
+                Start typing and choose a matching address.
+              </span>
+            </label>
+
+            <button id="useGps" class="gps-button" type="button">
+              Use my current location
+            </button>
+            <p id="gpsStatus" class="form-note" aria-live="polite"></p>
+
+            <label id="dropoffWrap" class="is-hidden">
+              Drop off location
+              <input
+                id="dropoffLocation"
+                name="dropoffLocation"
+                autocomplete="street-address"
+                list="dropoffSuggestions"
+              />
+              <datalist id="dropoffSuggestions"></datalist>
+              <span id="dropoffSuggestionStatus" class="field-note" aria-live="polite">
+                Start typing and choose a matching address.
+              </span>
+            </label>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+    <script src="./roadside-estimator.js" defer></script>
+  </body>
+</html>
